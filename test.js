@@ -1,14 +1,10 @@
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-<script type="text/javascript">
-	
-
 	var geocoder = new google.maps.Geocoder();
 	var address = "10 Netherby Road, Edinburgh";
 	var longitude;
 	var latitude;
 
 
-	function steve(){
+	//function steve(){
 		geocoder.geocode( { 'address': address}, function(results, status) {
 
 			if (status == google.maps.GeocoderStatus.OK) {
@@ -18,7 +14,3 @@
 				alert(longitude);
 			} 
 		});
-	}
-	steve();
-</script>
-	
