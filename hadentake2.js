@@ -32,23 +32,19 @@ request(url, function(err, resp, body) {
 			function LatLng(address){
 				geonoder.toCoordinates(address, geonoder.providers.google, function(lat, long) {
 	   				 //console.log('Lat: ' + lat + ' Long: ' + long) // 
-	   				var latt = lat;
-	   				var lon = long;
-	   				DisplayResults(latt, lon)
+	   				var lattitude = lat;
+	   				var longtitude = long;
+	   				console.log(lattitude);
+	   				console.log(longtitude);
 				});
-			};
+		};
 
-			function DisplayResults (latt, lon) {
-				console.log ('Address:' + $('#property_detail h3').text());
-				console.log('Lat: ' + latt);
-				console.log('Long: ' + lon);
-				console.log ('rooms:' + $('#property_detail h4').text());
-				console.log ('Description:' + $('.main_decription').text());
-				console.log ('Schedule:' + $('a[class="schedule_download"]').attr('href'));
-			}
 			
+			//console.log ('Address:' + $('#property_detail h3').text());
 			LatLng(address);
-			
+			//console.log ('rooms:' + $('#property_detail h4').text());
+			//console.log ('Description:' + $('.main_decription').text());
+			//console.log ('Schedule:' + $('a[class="schedule_download"]').attr('href'));
 			//console.log ('Schedule:' + $('#schedule_download li a:contains("href")').text());
 			
 		});
