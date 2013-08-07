@@ -27,21 +27,28 @@ request(url, function(err, resp, body) {
 			//scrapeid = $('meta[name="description"]').attr('content');
 			//console.log ('ID:' + $('a[class="schedule_download"]').attr('href'));
 			var address = $('#property_detail h3').text();
+			var rooms = $('#property_detail h4').text();
+			var desc = $('.main_decription').text();
+			var sched = $('a[class="schedule_download"]').attr('href');
 			//console.log(address);
 
-			function LatLng(address){
+			//function LatLng(address){
 				geonoder.toCoordinates(address, geonoder.providers.google, function(lat, long) {
 	   				 //console.log('Lat: ' + lat + ' Long: ' + long) // 
 	   				var lattitude = lat;
 	   				var longtitude = long;
-	   				console.log(lattitude);
-	   				console.log(longtitude);
+	   				console.log ('Address: ' + address);
+	   				console.log('Lat: ' + lattitude);
+	   				console.log('Long: ' + longtitude);
+	   				console.log ('Rooms: ' + rooms);
+	   				console.log ('Description: ' + desc);
+	   				console.log ('Schedule: ' + sched);
 				});
-		};
+			//};
 
 			
 			//console.log ('Address:' + $('#property_detail h3').text());
-			LatLng(address);
+			//LatLng(address);
 			//console.log ('rooms:' + $('#property_detail h4').text());
 			//console.log ('Description:' + $('.main_decription').text());
 			//console.log ('Schedule:' + $('a[class="schedule_download"]').attr('href'));
